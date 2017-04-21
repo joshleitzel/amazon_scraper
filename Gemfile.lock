@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rkelly (1.0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rkelly
+
+BUNDLED WITH
+   1.13.2
