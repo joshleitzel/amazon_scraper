@@ -5,8 +5,6 @@ class CommandLineAdapter
 
   def initialize(options)
     @options = options
-
-    p 'opts', options
   end
 
   def execute
@@ -23,6 +21,8 @@ class CommandLineAdapter
       queries = [ vowels.sample + consonants.sample ]
     end
 
+    start_time = Time.now
+
     queries.each do |query|
       SearchRequest.new(query: query, suggestions_library: suggestions_library, log: log)
     end
@@ -31,6 +31,8 @@ class CommandLineAdapter
       max_additional_requests = options[:snowball]
       Snowballer.new(suggestions_library: suggestions_library, log: log).execute(options[:snowball])
     end
+
+    time_elapsed = Time.now - start_time
 
     if options[:format] == 'json'
       output = suggestions_library.to_json
@@ -43,5 +45,9 @@ class CommandLineAdapter
     else
       puts(output)
     end
+
+    query_count = suggestions_library.queries.count
+    keyword_count = suggestions_library.keywords.count
+    puts("\nSearched #{query_count} quer#{ query_count == 1 ? 'y' : 'ies' } and found #{keyword_count} result#{ keyword_count == 1 ? '' : 's' } in #{time_elapsed.round(2)} seconds")
   end
 end

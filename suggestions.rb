@@ -1,7 +1,5 @@
 require 'logger'
 require 'optparse'
-# TODO: Remove
-require 'byebug'
 
 require_relative './suggestion'
 require_relative './suggestions_library'
