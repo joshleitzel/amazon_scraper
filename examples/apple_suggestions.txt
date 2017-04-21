@@ -1,5 +1,6 @@
 Query                Keywords                       Departments                             
-apple                apple watch band               Electronics, Cell Phones & Accessories  
+
+apple                apple watch band               Electronics; Cell Phones & Accessories  
 apple                apple watch band 42mm                                                  
 apple                apple watch band 38mm                                                  
 apple                apple cider vinegar                                                    

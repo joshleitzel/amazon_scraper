@@ -5,9 +5,11 @@ Welcome! This is a simple scraper that grabs Amazon autosuggest data based on a 
 It supports the following features:
 
 * Search for zero or more queries at a time
+* Snowball results into new queries for infinite searching
 * Collect department information (e.g. `Cell Phones & Accessories`) when available
 * Write output as text or JSON, to STDOUT or a file
 * Log to STDOUT or a file
+* Output metrics on queries used, keywords found, and total search time
 
 ## Find autosuggestions
 
@@ -61,8 +63,42 @@ Combine no-query mode and snowball mode for a maximum laziness-to-results ratio!
 
 ## Examples
 
+* Find autosuggestions for `apple` and output as text to a file:
+
+  ```
+  > ruby suggestions.rb -q apple -o apple_suggestions.txt -l log/log.txt 
+  ```
+
+  [See output]()
+
 * Find autosuggestions for `apple` and output as JSON to a file:
 
-```
-> ruby suggestions.rb -q apple -f json -l log.txt -o apple_suggestions.json
-```
+  ```
+  > ruby suggestions.rb -q apple -f json -o apple_suggestions.json -l log/log.txt 
+  ```
+
+  [See output]()
+
+* Find autosuggestions for `apple` and `pear` and output as text to a file:
+
+  ```
+  > ruby suggestions.rb -q apple,pear -o apple_pear_suggestions.txt -l log/log.txt 
+  ```
+
+  [See output]()
+
+* Find random autosuggestions and output to STDOUT:
+
+  ```
+  > ruby suggestions.rb -l log/log.txt
+  ```
+
+  [See output]()
+
+* Find random autosuggestions with snowballing and output to STDOUT:
+
+  ```
+  > ruby suggestions.rb -s 10 -l log/log.txt 
+  ```
+
+  [See output]()

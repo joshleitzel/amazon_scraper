@@ -2,71 +2,51 @@
   {
     "query": "apple",
     "keyword": "apple watch band",
-    "meta": {
-      "nodes": [
-        {
-          "name": "Electronics",
-          "alias": "electronics"
-        },
-        {
-          "name": "Cell Phones & Accessories",
-          "alias": "mobile"
-        }
-      ]
-    }
+    "departments": "Electronics; Cell Phones & Accessories"
   },
   {
     "query": "apple",
     "keyword": "apple watch band 42mm",
-    "meta": {
-    }
+    "departments": ""
   },
   {
     "query": "apple",
     "keyword": "apple watch band 38mm",
-    "meta": {
-    }
+    "departments": ""
   },
   {
     "query": "apple",
     "keyword": "apple cider vinegar",
-    "meta": {
-    }
+    "departments": ""
   },
   {
     "query": "apple",
     "keyword": "apple headphones",
-    "meta": {
-    }
+    "departments": ""
   },
   {
     "query": "apple",
     "keyword": "apple watch",
-    "meta": {
-    }
+    "departments": ""
   },
   {
     "query": "apple",
     "keyword": "apple iphone charger",
-    "meta": {
-    }
+    "departments": ""
   },
   {
     "query": "apple",
     "keyword": "apple earbuds",
-    "meta": {
-    }
+    "departments": ""
   },
   {
     "query": "apple",
     "keyword": "apple lightning cable",
-    "meta": {
-    }
+    "departments": ""
   },
   {
     "query": "apple",
     "keyword": "apple charger",
-    "meta": {
-    }
+    "departments": ""
   }
 ]

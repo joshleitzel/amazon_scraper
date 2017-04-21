@@ -1,5 +1,3 @@
-require_relative 'snowballer'
-
 class CommandLineAdapter
   attr_reader :options
 
@@ -18,7 +16,7 @@ class CommandLineAdapter
       # Looks like it’s up to us to generate a fun query!
       vowels = %w(a e i o u)
       consonants = ('a'..'z').to_a.reject { |letter| vowels.include?(letter) }
-      queries = [ vowels.sample + consonants.sample ]
+      queries = [vowels.sample + consonants.sample]
     end
 
     start_time = Time.now
@@ -34,11 +32,11 @@ class CommandLineAdapter
 
     time_elapsed = Time.now - start_time
 
-    if options[:format] == 'json'
-      output = suggestions_library.to_json
-    else
-      output = suggestions_library.to_text
-    end
+    output = if options[:format] == 'json'
+               suggestions_library.to_json
+             else
+               suggestions_library.to_text
+             end
 
     if options[:output_file]
       File.write(options[:output_file], output)
@@ -48,6 +46,6 @@ class CommandLineAdapter
 
     query_count = suggestions_library.queries.count
     keyword_count = suggestions_library.keywords.count
-    puts("\nSearched #{query_count} quer#{ query_count == 1 ? 'y' : 'ies' } and found #{keyword_count} result#{ keyword_count == 1 ? '' : 's' } in #{time_elapsed.round(2)} seconds")
+    puts("\nSearched #{query_count} quer#{query_count == 1 ? 'y' : 'ies'} and found #{keyword_count} result#{keyword_count == 1 ? '' : 's'} in #{time_elapsed.round(2)} seconds")
   end
 end

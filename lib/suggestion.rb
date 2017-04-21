@@ -4,7 +4,7 @@ class Suggestion
   def initialize(query:, keyword:, meta:)
     @keyword = keyword
     @meta = meta
-    @departments = (meta['nodes'] || []).map { |node| node['name'] }
+    @departments = (meta['nodes'] || []).map { |node| node['name'] }.join('; ')
     @query = query
   end
 
@@ -12,11 +12,11 @@ class Suggestion
     {
       query: query,
       keyword: keyword,
-      meta: meta
+      departments: departments
     }
   end
 
   def to_text
-    sprintf "%-20s %-30s %-40s\n", query, keyword, departments.join(', ')
+    sprintf "%-20s %-30s %-40s\n", query, keyword, departments
   end
 end

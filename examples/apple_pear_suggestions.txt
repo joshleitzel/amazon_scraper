@@ -1,0 +1,22 @@
+Query                Keywords                       Departments                             
+
+apple                apple watch band               Electronics; Cell Phones & Accessories  
+apple                apple watch band 42mm                                                  
+apple                apple watch band 38mm                                                  
+apple                apple cider vinegar                                                    
+apple                apple headphones                                                       
+apple                apple watch                                                            
+apple                apple iphone charger                                                   
+apple                apple earbuds                                                          
+apple                apple lightning cable                                                  
+apple                apple charger                                                          
+pear                 pearl necklace                 Women's Jewelry; Novelty & More         
+pear                 pearl earrings                                                         
+pear                 pearl choker                                                           
+pear                 pearls probiotic                                                       
+pear                 pearls                                                                 
+pear                 pearl sugar                                                            
+pear                 pearl izumi bike shorts                                                
+pear                 pearl necklace choker                                                  
+pear                 pearl bracelet                                                         
+pear                 pears soap                                                             

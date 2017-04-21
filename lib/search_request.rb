@@ -17,7 +17,7 @@ class SearchRequest
     response = Net::HTTP.get_response(uri)
     response_body = Net::HTTP.get_response(uri).body
     @log.info "Response (query: `#{query}`): #{response.code} #{response.message}"
-    @log.info "Response body (query: `#{query}`): #{response_body}..."
+    @log.info "Response body (query: `#{query}`): #{response_body}"
 
     # The response comes back from Amazon as JavaScript. We could use a JS
     # parser to yank out the data we want, but to avoid additional dependencies
@@ -43,5 +43,7 @@ class SearchRequest
         meta: metadata[index]
       )
     end
+  rescue
+    @log.error("Unable to retrieve results for query `#{query}`")
   end
 end
