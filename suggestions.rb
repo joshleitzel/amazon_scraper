@@ -16,6 +16,10 @@ OptionParser.new do |opts|
     options[:queries] = queries
   end
 
+  opts.on("-s", "--snowball [MAX_REQUESTS]", Integer, "Snowball mode") do |snowball|
+    options[:snowball] = snowball
+  end
+
   opts.on("-o", "--output [OUTPUT_FILE]", String, "Specify suggestion output file (defaults to STDOUT)") do |output_file|
     options[:output_file] = output_file
   end

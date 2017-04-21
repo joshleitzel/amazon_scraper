@@ -24,6 +24,7 @@ The following options are accepted:
   -o --output [OUTPUT_FILE]     File to write output (defaults to STDOUT)
   -f --format [FORMAT]          Format to write output – 'json' or 'text', defaults to 'text'
   -l --log [LOGFILE]            File to write logs to (defaults to STDOUT)
+  -s --snowball [MAX_REQUESTS]  Enable snowball mode; integer representing max additional requests to make
 ```
 
 ## No-query mode
@@ -46,6 +47,17 @@ If you don’t want to pass your own query, you don’t have to! We’ll auto-ge
   os                   oster blender
   os                   oster clippers
 ```
+
+## Snowball mode
+Snowball mode uses the autosuggests results themselves to build new queries and get new suggestions in turn. For example, for the keyword “echo”, one autosuggest result might be `echo dot 2nd generation`. With snowball mode, `echo`, `dot`, `2nd`, and `generation` all become queries that are then submitted to retrieve *their* suggestions.
+
+Since such a system could run indefinitely, to use snowball mode, pass an integer representing the maximum number of additional requests to make. For example, to stop snowballing after 10 requests total:
+
+```
+> ruby suggestions.rb -s 10
+```
+
+Combine no-query mode and snowball mode for a maximum laziness-to-results ratio!
 
 ## Examples
 

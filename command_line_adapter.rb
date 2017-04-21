@@ -1,3 +1,5 @@
+require_relative 'snowballer'
+
 class CommandLineAdapter
   attr_reader :options
 
@@ -23,6 +25,11 @@ class CommandLineAdapter
 
     queries.each do |query|
       SearchRequest.new(query: query, suggestions_library: suggestions_library, log: log)
+    end
+
+    if options[:snowball]
+      max_additional_requests = options[:snowball]
+      Snowballer.new(suggestions_library: suggestions_library, log: log).execute(options[:snowball])
     end
 
     if options[:format] == 'json'

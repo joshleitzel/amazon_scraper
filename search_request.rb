@@ -8,11 +8,11 @@ class SearchRequest
     @log = log
     @suggestions_library = suggestions_library
 
-    fetch_suggestions_library
+    fetch_suggestions
   end
 
-  def fetch_suggestions_library
-    @log.info "Requesting suggestions_library for #{query}..."
+  def fetch_suggestions
+    @log.info "Requesting suggetstions for #{query}..."
     uri = URI("https://completion.amazon.com/search/complete?method=completion&mkt=1&c=&p=Gateway&l=en_US&sv=desktop&client=amazon-search-ui&x=String&search-alias=aps&q=#{query}&qs=&cf=1&fb=1&sc=1&")
     response = Net::HTTP.get_response(uri)
     response_body = Net::HTTP.get_response(uri).body
@@ -22,7 +22,7 @@ class SearchRequest
     # The response comes back from Amazon as JavaScript. We could use a JS
     # parser to yank out the data we want, but to avoid additional dependencies
     # let's just chop off the beginning and end we don't need.
-    response_body = response_body.split("\"#{query}\",")[1]
+    response_body = response_body.split("completion = [\"#{query}\",")[1]
     response_body = response_body.split(';String();').first
     response_body = "[#{response_body}"
 
