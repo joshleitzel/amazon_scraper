@@ -69,7 +69,7 @@ Combine no-query mode and snowball mode for a maximum laziness-to-results ratio!
   > ruby suggestions.rb -q apple -o apple_suggestions.txt -l log/log.txt 
   ```
 
-  [See output]()
+  [See output](https://github.com/joshleitzel/amazon_scraper/blob/master/examples/apple_suggestions.txt)
 
 * Find autosuggestions for `apple` and output as JSON to a file:
 
@@ -77,7 +77,7 @@ Combine no-query mode and snowball mode for a maximum laziness-to-results ratio!
   > ruby suggestions.rb -q apple -f json -o apple_suggestions.json -l log/log.txt 
   ```
 
-  [See output]()
+  [See output](https://github.com/joshleitzel/amazon_scraper/blob/master/examples/apple_suggestions.json)
 
 * Find autosuggestions for `apple` and `pear` and output as text to a file:
 
@@ -85,7 +85,7 @@ Combine no-query mode and snowball mode for a maximum laziness-to-results ratio!
   > ruby suggestions.rb -q apple,pear -o apple_pear_suggestions.txt -l log/log.txt 
   ```
 
-  [See output]()
+  [See output](https://github.com/joshleitzel/amazon_scraper/blob/master/examples/apple_pear_suggestions.txt)
 
 * Find random autosuggestions and output to STDOUT:
 
@@ -93,7 +93,7 @@ Combine no-query mode and snowball mode for a maximum laziness-to-results ratio!
   > ruby suggestions.rb -l log/log.txt
   ```
 
-  [See output]()
+  [See output](https://github.com/joshleitzel/amazon_scraper/blob/master/examples/random.txt)
 
 * Find random autosuggestions with snowballing and output to STDOUT:
 
@@ -101,4 +101,12 @@ Combine no-query mode and snowball mode for a maximum laziness-to-results ratio!
   > ruby suggestions.rb -s 10 -l log/log.txt 
   ```
 
-  [See output]()
+  [See output](https://github.com/joshleitzel/amazon_scraper/blob/master/examples/random_snowballing.txt)
+
+* Find random autosuggestions with lots of snowballing and output to file:
+
+  ```
+  > ruby suggestions.rb -s 300 -o examples/snowball_300.txt -l log/log.txt 
+  ```
+
+  [See output](https://github.com/joshleitzel/amazon_scraper/blob/master/examples/snowball_300.txt)
